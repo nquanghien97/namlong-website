@@ -19,6 +19,108 @@ body {
   color: var(--ink);
 }
 
+/* ===== CONTACT ITEM ===== */
+.contact-item {
+  position: relative;
+}
+
+/* ===== BUTTON WRAPPER ===== */
+.contact-btn {
+  position: relative;
+  width: 90px;
+  height: 90px;
+  cursor: pointer;
+  z-index: 11;
+  display: block;
+
+  background: transparent;
+  visibility: visible;
+
+  transform: translateZ(0);
+  backface-visibility: hidden;
+  transition: visibility 0.5s;
+}
+
+/* ===== VARIANTS ===== */
+.contact-item[data-type="messenger"] {
+  --main-color: #714497;
+  --main-bg: #714497cc;
+}
+
+.contact-item[data-type="zalo"] {
+  --main-color: #2196f3;
+  --main-bg: #2196f3b3;
+}
+
+.contact-item[data-type="phone"] {
+  --main-color: #dd3333;
+  --main-bg: #eb4e4e;
+}
+
+/* ===== PULSE EFFECT ===== */
+.contact-pulse {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  width: 65px;
+  height: 65px;
+
+  border-radius: 50%;
+  border: 2px solid transparent;
+
+  background-color: var(--main-bg);
+  box-shadow: 0 0 0 0 var(--main-color);
+
+  transform-origin: 50% 50%;
+  transition: all 0.5s;
+
+  animation: contact-pulse-ring 1.3s infinite;
+}
+
+/* ===== ICON ===== */
+.contact-icon {
+  position: absolute;
+  top: 25px;
+  left: 25px;
+
+  width: 40px;
+  height: 40px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  border-radius: 50%;
+  background-color: var(--main-color);
+
+  animation: contact-shake 1s infinite ease-in-out;
+}
+
+/* ===== ANIMATIONS ===== */
+@keyframes contact-pulse-ring {
+  0% {
+    transform: scale(0.9);
+  }
+  70% {
+    transform: scale(1);
+    box-shadow: 0 0 0 15px transparent;
+  }
+  100% {
+    transform: scale(0.9);
+    box-shadow: 0 0 0 0 transparent;
+  }
+}
+
+@keyframes contact-shake {
+  0% { transform: rotate(0) scale(1) skew(1deg); }
+  10% { transform: rotate(-25deg) scale(1) skew(1deg); }
+  20% { transform: rotate(25deg) scale(1) skew(1deg); }
+  30% { transform: rotate(-25deg) scale(1) skew(1deg); }
+  40% { transform: rotate(25deg) scale(1) skew(1deg); }
+  50% { transform: rotate(0) scale(1) skew(1deg); }
+  100% { transform: rotate(0) scale(1) skew(1deg); }
+}
+
 /* styles/content.css */
 
 .content h2 {

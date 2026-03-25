@@ -3,6 +3,7 @@ import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import Image from "next/image";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -30,6 +31,27 @@ export const metadata: Metadata = {
   },
 };
 
+const contacts = [
+  {
+    type: "messenger",
+    href: "https://m.me/namlong.edu.vn",
+    icon: "/messenger.png",
+    alt: "Messenger",
+  },
+  {
+    type: "zalo",
+    href: "https://zalo.me/0835532678",
+    icon: "/zalo.png",
+    alt: "Zalo",
+  },
+  {
+    type: "phone",
+    href: "tel:0835532678",
+    icon: "/phone.png",
+    alt: "Phone",
+  },
+];
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -42,6 +64,26 @@ export default function RootLayout({
       data-scroll-behavior="smooth"
     >
       <body className="min-h-full flex flex-col">
+        <div className="fixed right-0 bottom-0 z-999">
+          {contacts.map((item) => (
+            <div key={item.type} className="contact-item" data-type={item.type}>
+              <div className="contact-btn">
+                <div className="contact-pulse"></div>
+                <div className="contact-icon">
+                  <a href={item.href} target="_blank">
+                    <Image
+                      className="max-h-6 max-w-6 absolute top-1/2 left-1/2 -translate-1/2"
+                      width={40}
+                      height={40}
+                      src={item.icon}
+                      alt={item.alt}
+                    />
+                  </a>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
         <Navbar />
         {children}
         <Footer />

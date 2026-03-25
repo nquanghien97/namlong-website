@@ -16,31 +16,31 @@ export default function Home() {
       <Animate type="fadeIn">
         <Hero />
       </Animate>
-      <Animate type="fadeInLeft" delay={0.5}>
+      <Animate type="fadeInLeft" delay={0.2}>
         <Features />
       </Animate>
-      <Animate type="fadeInRight" delay={0.5}>
+      <Animate type="fadeInRight" delay={0.2}>
         <AboutMe />
       </Animate>
-      <Animate type="scaleIn" delay={0.5}>
+      <Animate type="scaleIn" delay={0.2}>
         <Courses />
       </Animate>
-      <Animate type="slideUp" delay={0.5}>
+      <Animate type="slideUp" delay={0.2}>
         <ExamSchedule />
       </Animate>
-      <Animate type="zoomIn" delay={0.5}>
+      <Animate type="zoomIn" delay={0.2}>
         <Benefit />
       </Animate>
-      <Animate type="fadeIn" delay={0.5}>
+      <Animate type="fadeIn" delay={0.2}>
         <Certificate />
       </Animate>
-      <Animate type="fadeInLeft" delay={0.5}>
+      <Animate type="fadeInLeft" delay={0.2}>
         <Testimonials />
       </Animate>
-      <Animate type="fadeInRight" delay={0.5}>
+      <Animate type="fadeInRight" delay={0.2}>
         <Blog />
       </Animate>
-      <Animate type="fadeIn" delay={0.5}>
+      <Animate type="fadeIn" delay={0.2}>
         <CTA />
       </Animate>
     </main>
