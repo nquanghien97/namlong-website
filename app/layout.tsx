@@ -23,7 +23,7 @@ export const metadata: Metadata = {
     description: "Đơn vị luyện thi chứng chỉ tiếng Anh cấp tốc cam kết đầu ra chỉ sau 8-12 buổi học",
     images: [
       {
-        url: "/logo.png",
+        url: "/cropped-logo.png",
         width: 1200,
         height: 630,
       },
